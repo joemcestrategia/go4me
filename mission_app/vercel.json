@@ -1,12 +1,13 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "flutter pub get && flutter build web --release --web-renderer canvaskit",
+  "installCommand": "if [ ! -d \"/opt/flutter\" ]; then git clone https://github.com/flutter/flutter.git -b stable /opt/flutter && /opt/flutter/bin/flutter config --enable-web; fi && export PATH=\"$PATH:/opt/flutter/bin\"",
   "outputDirectory": "build/web",
-  "buildCommand": null,
-  "installCommand": null,
-  "rewrites": [
-    {
-      "source": "/((?!.*\\.).*)",
-      "destination": "/index.html"
+  "build": {
+    "env": {
+      "FLUTTER_ROOT": "/opt/flutter"
     }
+  },
+  "rewrites": [
+    { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
   ]
 }

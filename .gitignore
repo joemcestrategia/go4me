@@ -1,0 +1,12 @@
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Agent files
+.agent/
+
+# Docs (keep implementation_plan.md if desired, or ignore)
